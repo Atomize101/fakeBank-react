@@ -5,20 +5,9 @@ function App() {
 	const [accounts, setAccounts] = useState([]);
 	const baseURL = 'https://sampleapis.com/fakebank/api/Accounts';
 
-	//useEffect(() => {
-	//	fetch(baseURL).then((response) => response.json().then(setAccounts));
-	//}, []);
-
 	useEffect(() => {
 		fetch(baseURL).then((response) => response.json().then(setAccounts));
 	}, []);
-
-	//fetch(baseURL)
-	//	.then((resp) => {
-	//		return resp.json();
-	//	})
-
-	//	.then((data) => console.log(data));
 
 	return (
 		<>
@@ -41,8 +30,3 @@ function App() {
 }
 
 export default App;
-
-//Testing
-//{accounts.map((account) => (
-//				<button key={id}>{account}</button>
-//			))}
