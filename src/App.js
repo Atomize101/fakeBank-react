@@ -3,27 +3,33 @@ import './App.css';
 
 function App() {
 	const [accounts, setAccounts] = useState([]);
-	//const baseURL = 'https://sampleapis.com/fakebank/api/Accounts';
+	const baseURL = 'https://sampleapis.com/fakebank/api/Accounts';
 
 	//useEffect(() => {
 	//	fetch(baseURL).then((response) => response.json().then(setAccounts));
 	//}, []);
-	const baseURL = 'https://sampleapis.com/fakebank/api/Accounts';
 
-	fetch(baseURL)
-		.then((resp) => {
-			return resp.json();
-		})
+	useEffect(() => {
+		fetch(baseURL).then((response) => response.json().then(setAccounts));
+	}, []);
 
-		.then((data) => console.log(data));
+	//fetch(baseURL)
+	//	.then((resp) => {
+	//		return resp.json();
+	//	})
+
+	//	.then((data) => console.log(data));
 
 	return (
 		<div className="App">
-			{accounts.map((account) => (
-				<button key={account}>{account}</button>
-			))}
+			<p>{console.log(accounts[0])}</p>
 		</div>
 	);
 }
 
 export default App;
+
+//Testing
+//{accounts.map((account) => (
+//				<button key={account}>{account}</button>
+//			))}
