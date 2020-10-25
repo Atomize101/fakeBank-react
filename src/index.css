@@ -6,9 +6,13 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	background-color: black;
 	color: white;
-	text-align: left;
 }
 
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.balance {
+	text-align: left;
+	margin-left: 40px;
 }
