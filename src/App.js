@@ -4,25 +4,13 @@ import { getBalance } from './service/api';
 
 function App() {
 	const [accounts, setAccounts] = useState([]);
-	const [number1, setNumber1] = useState(3);
-	const [number2, setNumber2] = useState(1);
-	const [total, setTotal] = useState(0);
 
 	useEffect(() => {
 		getBalance().then(setAccounts);
-		//console.log(accounts);
-	}, [accounts]);
+	}, []);
 
-	//	const calculateTotal = () => {
-	//		setTotal(number1 + number2);
-	//		console.log(total);
-	//	};
-
-	var sum = accounts.reduce(function (a, b) {
-		return a + b;
-	}, 0);
-
-	//console.log(sum);
+	const accountTotal = accounts.reduce((totalAccounts, account) => totalAccounts + account.Debit + account.Credit, 0);
+	console.log(accountTotal);
 
 	return (
 		<>
@@ -30,7 +18,7 @@ function App() {
 				<div>
 					<h1>
 						Total Charges:
-						<div className="Total">{total}</div>
+						<div className="Total">{accountTotal}</div>
 					</h1>
 					{accounts.map((account) => (
 						<div className="balance">
