@@ -18,10 +18,11 @@ function App() {
 				<div>
 					<h1>
 						Total Charges:
-						<div className="Total">{accountTotal}</div>
+						<div className="container">{accountTotal}</div>
 					</h1>
 					{accounts.map((account) => (
-						<div className="balance">
+						<div>
+							<br />
 							<h2 key={account.id}>{account['Transaction-Date']}</h2>
 							<h2 key={account.id[1]}>Description: {account.Description}</h2>
 							<h3 key={account.id[2]}>Category: {account.Category}</h3>
