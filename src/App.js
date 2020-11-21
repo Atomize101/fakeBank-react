@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import { getBalance } from './service/api';
+import Total from './components/Total';
 
 function App() {
 	const [accounts, setAccounts] = useState([]);
@@ -9,7 +10,9 @@ function App() {
 		getBalance().then(setAccounts);
 	}, []);
 
-	const accountTotal = accounts.reduce((totalAccounts, account) => totalAccounts + account.Debit + account.Credit, 0);
+	let accountTotal = accounts.reduce((a, b) => a.Credit + b.Debit, 0);
+	//let accountTotal = account.reduce((account.Debit, account.Credit) => account.Debit + account.Credit, 0);
+	//let theAccountTotal = accounts.map((account) => account.Credit + account.Debit);
 	console.log(accountTotal);
 
 	return (
