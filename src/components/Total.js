@@ -1,15 +1,9 @@
 import React from 'react';
 
-const Total = ({ accountTotal }) => {
-	console.log(accountTotal);
-	return (
-		<div>
-			<h1>
-				Total Charges:
-				<div className="container">{accountTotal}</div>
-			</h1>
-		</div>
-	);
+const Total = ({ accounts }) => {
+	console.log(accounts[0]);
+	const total = accounts.reduce((prevValue, currentValue) => prevValue + currentValue, 0);
+	return <p>Totalzzz: {accounts}</p>;
 };
 
 export default Total;
